@@ -104,3 +104,16 @@ Backend can be deployed to Render from the `server` folder.
 
 Set all environment variables on the hosting platforms before deployment.
 
+For the Vercel frontend, set `VITE_API_URL` to the deployed backend API URL, not
+localhost. For example:
+
+```env
+VITE_API_URL=https://your-backend.onrender.com/api
+```
+
+For the backend, set `CLIENT_URL` to the deployed Vercel frontend URL so CORS and
+Stripe redirects use the production site. For example:
+
+```env
+CLIENT_URL=https://your-vercel-app.vercel.app
+```

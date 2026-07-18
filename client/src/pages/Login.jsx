@@ -26,7 +26,7 @@ function Login() {
     } catch (err) {
       setError(
         err.response?.data?.message ||
-        (err.message === 'Network Error' ? 'Cannot reach the API server. Start the backend on port 5000 and try again.' : err.message) ||
+        (err.message === 'Network Error' ? 'Cannot reach the API server. Check the deployed backend URL in VITE_API_URL.' : err.message) ||
         'Login failed'
       );
     }
