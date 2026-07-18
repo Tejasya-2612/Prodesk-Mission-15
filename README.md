@@ -108,12 +108,12 @@ For the Vercel frontend, set `VITE_API_URL` to the deployed backend API URL, not
 localhost. For example:
 
 ```env
-VITE_API_URL=https://your-backend.onrender.com/api
+VITE_API_URL=https://prodesk-mission-15.onrender.com/api
 ```
 
 For the backend, set `CLIENT_URL` to the deployed Vercel frontend URL so CORS and
 Stripe redirects use the production site. For example:
 
 ```env
-CLIENT_URL=https://your-vercel-app.vercel.app
+CLIENT_URL=https://prodesk-mission-15-bpkz2cush-atejasya8-1627s-projects.vercel.app
 ```

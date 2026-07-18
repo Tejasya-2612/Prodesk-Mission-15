@@ -18,16 +18,29 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const allowedOrigins = new Set([
   process.env.CLIENT_URL,
+  'https://prodesk-mission-15.vercel.app',
+  'https://prodesk-mission-15-bpkz2cush-atejasya8-1627s-projects.vercel.app',
+  'https://prodesk-mission-15-kbb1kbxol-atejasya8-1627s-projects.vercel.app',
   'http://localhost:5173',
   'http://127.0.0.1:5173'
 ].filter(Boolean));
 const localDevOriginPattern = /^http:\/\/(localhost|127\.0\.0\.1):\d+$/;
+const vercelPreviewOriginPattern = /^https:\/\/prodesk-mission-15-[a-z0-9-]+-atejasya8-1627s-projects\.vercel\.app$/;
+
+function isAllowedOrigin(origin) {
+  return (
+    !origin ||
+    allowedOrigins.has(origin) ||
+    localDevOriginPattern.test(origin) ||
+    vercelPreviewOriginPattern.test(origin)
+  );
+}
 
 connectDB();
 
 app.use(cors({
   origin(origin, callback) {
-    if (!origin || allowedOrigins.has(origin) || localDevOriginPattern.test(origin)) {
+    if (isAllowedOrigin(origin)) {
       callback(null, true);
       return;
     }
