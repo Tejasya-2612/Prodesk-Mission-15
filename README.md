@@ -2,6 +2,12 @@
 
 A full-stack MERN task management dashboard built from scratch for Sprint 15 Track B.
 
+## Deployment
+
+Frontend Link: https://prodesk-mission-15.vercel.app/
+
+Backend Link: https://prodesk-mission-15.onrender.com/
+
 ## Features
 
 - User register, login and logout
@@ -117,3 +123,8 @@ Stripe redirects use the production site. For example:
 ```env
 CLIENT_URL=https://prodesk-mission-15-bpkz2cush-atejasya8-1627s-projects.vercel.app
 ```
+
+Author:
+A TEJASYA
+
+P/IL/26/NOIDA/M1299
